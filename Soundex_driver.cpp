@@ -1,4 +1,4 @@
-//This Algorithm is made
+//This Algorithm is made as an assignment project under the guidance of Dr. Rakesh Chandra Balabantaray Sir 
 
 //including header files
 #include <cstring>
@@ -55,7 +55,7 @@ void display(char token[4])
 		size_t pos;
               string line;
     int counter=0;
-		input.open("test.txt");
+		input.open("Lexicon.txt");
 		if(input.is_open())
 		{
 			while(getline(input,line))
@@ -85,7 +85,6 @@ void display(char token[4])
 void soundex_user(char* testword){
 
     char code[5]={};
-    char squeezed[5]={};
     //lower case all alphabets
     for (int i=0; i<strlen(testword); i++)
     {
@@ -93,7 +92,7 @@ void soundex_user(char* testword){
     }
 
     //first letter in always kept
-    code[0]=squeezed[0]=testword[0];
+    code[0]=testword[0];
 
     int prev = groupnum(code[0]);
     int c=0;
@@ -117,7 +116,6 @@ void soundex_user(char* testword){
             if(strlen(code)<4)//only 4 chars
             {   c=0;
                 code[strlen(code)] = convertToChar(nch);
-                squeezed[strlen(squeezed)] = testword[i];
                 prev = nch;
             }else
             {
@@ -138,7 +136,7 @@ void soundex_user(char* testword){
 void soundex(char* testword){
 
     char code[5]={};
-    char squeezed[5]={};
+    
     //lower case all alphabets
     for (int i=0; i<strlen(testword); i++)
     {
@@ -146,7 +144,7 @@ void soundex(char* testword){
     }
 
     //first letter in always kept
-    code[0]=squeezed[0]=testword[0];
+    code[0]=testword[0];
 
     int prev = groupnum(code[0]);
     int c=0;
@@ -168,7 +166,6 @@ void soundex(char* testword){
             if(strlen(code)<4)//only 4 chars
             {   c=0;
                 code[strlen(code)] = convertToChar(nch);
-                squeezed[strlen(squeezed)] = testword[i];
                 prev = nch;
             }else
             {
@@ -185,7 +182,7 @@ void soundex(char* testword){
     char filePath[100];
 
 
-    fPtr = fopen("test.txt", "a");
+    fPtr = fopen("Lexicon.txt", "a");
     if (fPtr == NULL)
     {
 
@@ -212,7 +209,7 @@ void cleanFile(){
     char filePath[100];
 
 
-    fPtr = fopen("test.txt", "w");
+    fPtr = fopen("Lexicon.txt", "w");
     if (fPtr == NULL)
     {
 
@@ -228,13 +225,13 @@ void cleanFile(){
 
 }
 
-
+//driver code to initialise the lexicon then asking and comparing the user input with the soundex lexicon and displaying the matched words
 int main()
 {
     cout<< "Please WAIT, the Program is Processing !!!\n"<<endl;
-    cout<< "****** Your Patience is Appreciated ******"<<endl;
+    cout<< "*******Your Patience is Appreciated ******"<<endl;
 
-
+    //reading from the file readtxt.txt	
     fstream file;
     string word, t, q, filename;
 
@@ -242,6 +239,7 @@ int main()
     file.open(filename.c_str());
 
     cleanFile();
+     //writing into lexicon.txt
     while (file >> word)
      {
      string s = word;
@@ -253,9 +251,9 @@ int main()
 
     cout<<"\nSoundex Lexicon successfully stored\n"<<endl;
 
-
+     //asking for user input
     string temp ;
-    cout<<"Enter the WORD :: ";
+    cout<<"Enter the query WORD :: ";
 
     cin>>temp;
 
