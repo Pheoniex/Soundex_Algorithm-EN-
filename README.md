@@ -22,10 +22,10 @@ Note:
 
 
 What to ADD:
-We could make use of other algorithms such as edit distance and such to determine most probable alternatives to our query and thus decreasing 
-the number of suggestions that are displayed per query and also make more accurate.
-We could make a function to update the lexicon rather than reinitialising every time also it could be made optional.
-We could try to make the programme work for a string (group of words containg any charachters).
+#We could make use of other algorithms such as edit distance and such to determine most probable alternatives to our query and thus decreasing 
+#The number of suggestions that are displayed per query and also make more accurate.
+#We could make a function to update the lexicon rather than reinitialising every time also it could be made optional.
+#We could try to make the programme work for a string (group of words containg any charachters).
 
 
 
