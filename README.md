@@ -2,7 +2,7 @@
 This is an algorithm to find the soundex code of a word and then match it with it's homophones(i.e words with same soundex code)
 
 
-Description:
+Description:                                                                                            
 This repository includes a Driver Function and Two Text files.
 
 The Driver function(Soundex_driver.cpp) does the following thing:
