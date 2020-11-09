@@ -229,22 +229,22 @@ int main()
     cout<< "Please WAIT, the Program is Processing !!!\n"<<endl;
     cout<< "****** Your Patience is Appreciated ******"<<endl;
 
-//
-//    fstream file;
-//    string word, t, q, filename;
-//
-//    filename = "readtxt.txt";
-//    file.open(filename.c_str());
-//
-//    cleanFile();
-//    while (file >> word)
-//    {
-//        string s = word;
-//        int n = s.length();
-//        char char_array[n + 1];
-//        strcpy(char_array, s.c_str());
-//        soundex(char_array);
-//    }
+
+    fstream file;
+    string word, t, q, filename;
+
+    filename = "readtxt.txt";
+    file.open(filename.c_str());
+
+    cleanFile();
+    while (file >> word)
+     {
+     string s = word;
+      int n = s.length();
+        char char_array[n + 1];
+        strcpy(char_array, s.c_str());
+        soundex(char_array);
+     }
 
     cout<<"\nSoundex Lexicon successfully stored\n"<<endl;
 
