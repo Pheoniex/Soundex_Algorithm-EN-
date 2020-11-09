@@ -1,17 +1,18 @@
+//This Algorithm is made
+
+//including header files
 #include <cstring>
 #include <cstdio>
 #include <cctype>
 #include <iostream>
-
 #include <bits/stdc++.h>
 using namespace std;
 
-
+//declaration for grouping of the letters with their respective group as per soundex algorithm.
 char numch[] = {'a','e','i','o','u','w','h','y','b','f','p','v','c','g','j','k','q','s','x','z','d','t','l','m','n','r'};
 int numint[] = {8,8,8,8,8,9,9,9,1,1,1,1,2,2,2,2,2,2,2,2,3,3,4,5,5,6};
 
-
-
+//for reading file
 void readFile(FILE * fPtr)
 {
     char ch;
@@ -25,7 +26,7 @@ void readFile(FILE * fPtr)
     } while (ch != EOF);
 }
 
-
+//grouping the letters with their numeric group as per soundex rules
 int groupnum (char s)
 {
     for (int i=0; i<26 ; i++)
@@ -37,6 +38,7 @@ int groupnum (char s)
     }return -1;
 }
 
+//to convert all the letters to lower case
 char convertToChar(int nch)
 {
     char ch;
@@ -45,7 +47,7 @@ char convertToChar(int nch)
     return ch;
 }
 
-
+//to search for the words with similar soundex code in the data base and display them
 void display(char token[4])
 {
 
@@ -79,7 +81,7 @@ void display(char token[4])
 
 }
 
-
+//for converting the user query word into a soundex code
 void soundex_user(char* testword){
 
     char code[5]={};
@@ -132,6 +134,7 @@ void soundex_user(char* testword){
 
 }
 
+//for converting the words from a file into soundex code and then writing into another file the soundex code and word pair
 void soundex(char* testword){
 
     char code[5]={};
@@ -201,6 +204,8 @@ void soundex(char* testword){
 
 }
 
+
+//so that every time the programme runs there are no two instances of the same lexicon
 void cleanFile(){
 
     FILE *fPtr;
