@@ -250,7 +250,8 @@ int main()
      }
 
     cout<<"\nSoundex Lexicon successfully stored\n"<<endl;
-
+    
+     //label for goto statment
     reloop:
      //asking for user input
     string temp ;
@@ -262,6 +263,7 @@ int main()
     strcpy(testword, temp.c_str());
     soundex_user(testword);
 	
+    //redirecting if user wants to give another input	
     int h;
     cout<<"press 1 if you want to check soundex code for another word "<<endl;
     cout<<"press any other key to close the function"<<endl;
