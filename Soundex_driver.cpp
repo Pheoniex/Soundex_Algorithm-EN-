@@ -38,7 +38,7 @@ int groupnum (char s)
     }return -1;
 }
 
-//to convert all the letters to lower case
+//to convert all the letters to lowercase
 char convertToChar(int nch)
 {
     char ch;
@@ -47,7 +47,7 @@ char convertToChar(int nch)
     return ch;
 }
 
-//to search for the words with similar soundex code in the data base and display them
+//to search for the words with similar soundex code in the database and display them
 void display(char token[4])
 {
 
@@ -90,7 +90,7 @@ void soundex_user(char* testword){
     {
         testword[i] = tolower(testword[i]);
     }
-
+   if(isalpha(testword[0])){
     //first letter in always kept
     code[0]=testword[0];
 
@@ -129,6 +129,10 @@ void soundex_user(char* testword){
     }
     cout<<code;
     display(code);
+   }
+   else {
+    cout<<"invalid input\n";
+   }
 
 }
 
@@ -142,7 +146,7 @@ void soundex(char* testword){
     {
         testword[i] = tolower(testword[i]);
     }
-
+ if(isalpha(testword[0])){
     //first letter in always kept
     code[0]=testword[0];
 
@@ -197,12 +201,15 @@ void soundex(char* testword){
     fputs("\n", fPtr);
 
     fclose(fPtr);
-
+    }
+    else{
+        cout<<"invalid output\n";
+    }
 
 }
 
 
-//so that every time the programme runs there are no two instances of the same lexicon
+//so that every time the program runs there are no two instances of the same lexicon
 void cleanFile(){
 
     FILE *fPtr;
@@ -225,7 +232,7 @@ void cleanFile(){
 
 }
 
-//driver code to initialise the lexicon then asking and comparing the user input with the soundex lexicon and displaying the matched words
+//driver code to initialize the lexicon then asking and comparing the user input with the soundex lexicon and displaying the matched words
 int main()
 {
     cout<< "Please WAIT, the Program is Processing !!!\n"<<endl;
@@ -251,7 +258,7 @@ int main()
 
     cout<<"\nSoundex Lexicon successfully stored\n"<<endl;
     
-     //label for goto statment
+     //label for goto statement
     reloop:
      //asking for user input
     string temp ;
@@ -265,9 +272,9 @@ int main()
 	
     //redirecting if user wants to give another input	
     int h;
-    cout<<"press 1 if you want to check soundex code for another word "<<endl;
-    cout<<"press any other key to close the function"<<endl;
-    cin>>int(h);	
+    cout<<"\n\n\nPress 1 if you want to check soundex code for another word "<<endl;
+    cout<<"         Enter any other char to close the function         "<<endl;
+    cin>>h;
 	if(h==1)
 	{
              goto reloop;
